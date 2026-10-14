@@ -1,0 +1,34 @@
+{
+  "name": "rea-triage",
+  "version": "0.1.0",
+  "description": "Turn a Linux core dump into a human-readable bug report using REA and gdb, without running the program.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "rea-triage": "dist/src/cli.js"
+  },
+  "files": [
+    "dist/src",
+    "README.md"
+  ],
+  "engines": {
+    "node": "^22.19.0 || ^24.11.0 || >=26.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test \"dist/test/**/*.test.js\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "peerDependencies": {
+    "rea-agents": ">=6.4.0"
+  },
+  "peerDependenciesMeta": {
+    "rea-agents": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "typescript": "^5.9.0"
+  }
+}
